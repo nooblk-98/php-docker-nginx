@@ -8,7 +8,7 @@ LABEL version="1.0.0"
 LABEL description="Production-ready PHP-FPM + Nginx image"
 
 # Install nginx and required packages
-RUN apk add --no-cache nginx bash curl nano  wget
+RUN apk add --no-cache nginx bash curl nano  wget supervisor
 
 # PHP extension installer
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -39,6 +39,13 @@ RUN install-php-extensions gd \
     soap \
     bcmath
 
+# Create supervisor directories
+RUN mkdir -p /etc/supervisor/conf.d
+
+# Copy supervisor configs
+COPY supervisor/supervisord.conf /etc/supervisord.conf
+COPY supervisor/conf.d/*.conf /etc/supervisor/conf.d/
+
 # Copy nginx config
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -56,8 +63,8 @@ COPY sample/index.html ./index.html
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-RUN addgroup -S www && adduser -S www -G www
-RUN chown -R www:www /var/www/html
+RUN chown -R www-data:www-data /var/www/html
+
 
 RUN rm -rf /var/cache/apk/*
 
