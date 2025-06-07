@@ -77,11 +77,9 @@ RUN sed -i 's|root /var/www/html;|root /var/www/html/public;|' /etc/nginx/nginx.
 
 ```sh
 #!/bin/sh
-echo "Starting PHP-FPM..."
-php-fpm -D
 
-echo "Starting Nginx..."
-exec nginx -g "daemon off;"
+# Start supervisor services (ginx, php-fpm)
+exec supervisord -c /etc/supervisord.conf
 ```
 
 ---
