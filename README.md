@@ -1,6 +1,6 @@
 
 
-# 🚀 wp-production-stack
+# 🚀 php-production-stack
 
 A **production-ready PHP-FPM + Nginx Docker container** designed for modern PHP applications such as **WordPress**, **Laravel**, and custom PHP stacks. Lightweight, secure, and built for performance.
 
