@@ -1,10 +1,9 @@
 #!/bin/sh
 
-# Start php-fpm and nginx via supervisor
-mkdir -p /run/nginx
+# Start PHP-FPM
+echo "Starting PHP-FPM..."
+php-fpm -D
 
-# Start php-fpm in background
-php-fpm &
-
-# Start nginx in foreground
-nginx -g "daemon off;"
+# Start Nginx in foreground
+echo "Starting Nginx..."
+exec nginx -g "daemon off;"
