@@ -1,23 +1,123 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Spoon-Knife</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome – PHP-FPM + Nginx Stack</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 3rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul li::before {
+      content: "✔";
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1>🚀 PHP-FPM + Nginx Container</h1>
+    <p>Welcome! This container is optimized for modern PHP applications with performance and production in mind.</p>
 
-<img src="forkit.gif" id="octocat" alt="" />
+    <section>
+      <h2>📦 Stack Overview</h2>
+      <ul>
+        <li>PHP 8.2 (FPM Mode) on Alpine</li>
+        <li>Nginx with HTTP/1.1, Gzip, Caching</li>
+        <li>Clean custom entrypoint</li>
+        <li>All essential PHP extensions pre-installed</li>
+        <li>Logging to <code>stdout/stderr</code> for container platforms</li>
+      </ul>
+    </section>
 
-<!-- Feel free to change this text here -->
-<p>
-  Fork me? Fork you, @octocat!
-</p>
-<p>
-  Sean made a change
-</p>
+    <section>
+      <h2>🎯 Benefits</h2>
+      <ul>
+        <li>Lightweight and fast (Alpine based)</li>
+        <li>Secure: runs with privilege dropping support</li>
+        <li>Pre-configured for production</li>
+        <li>Extendable for Laravel, WordPress, and APIs</li>
+      </ul>
+    </section>
 
+    <section>
+      <h2>📁 Document Root</h2>
+      <p>Application files are served from: <code>/var/www/html</code></p>
+    </section>
+
+    <section>
+      <h2>📬 Maintainer</h2>
+      <p><strong>liyanagelsofficial@gmail.com</strong></p>
+    </section>
+
+    <footer>
+      &copy; 2025 – Built with ❤️ for speed and scalability.
+    </footer>
+  </div>
 </body>
 </html>
