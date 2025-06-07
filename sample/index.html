@@ -136,6 +136,23 @@
     </section>
 
     <section>
+      <h2>🐳 Docker Image Usage</h2>
+      <p><strong>Pull the prebuilt image:</strong></p>
+      <code>docker pull ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+
+      <p><strong>Run directly:</strong></p>
+      <code>docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+
+      <p><strong>Mount your local project:</strong></p>
+      <code>docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+
+      <p><strong>Use as a base image:</strong></p>
+      <pre><code>FROM ghcr.io/nooblk-98/php-docker-production-stack:latest
+    COPY . /var/www/html
+    </code></pre>
+    </section>
+
+    <section>
       <h2>🔗 Resources</h2>
       <p>
         🌐 <strong>Project Repo:</strong>

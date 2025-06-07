@@ -70,10 +70,41 @@ php-fpm -D
 echo "Starting Nginx..."
 exec nginx -g "daemon off;"
 ```
-
 ---
 
-## 🚀 How to Use
+### 🐳 Docker Image Usage
+
+#### ✅ Pull the Prebuilt Image
+
+```bash
+docker pull ghcr.io/nooblk-98/php-docker-production-stack:latest
+```
+
+#### ▶️ Run the Container Directly
+
+```bash
+docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-production-stack:latest
+```
+
+You can mount your project directory:
+
+```bash
+docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-production-stack:latest
+```
+
+#### 🧱 Use as a Base Image in Your Dockerfile
+
+```Dockerfile
+FROM ghcr.io/nooblk-98/php-docker-production-stack:latest
+
+# Copy your application code
+COPY . /var/www/html
+
+# Customize if needed
+```
+---
+
+## 🚀 Build & Run from source
 
 ### 1. Build the Docker Image
 
