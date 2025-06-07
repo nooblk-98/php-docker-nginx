@@ -162,9 +162,7 @@ docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 ---
 
 
-## 📝 To-Do / Setup Notes
-
-Before using this in production, make sure to:
+## 📝 To-Do Notes
 
 * [ ] 📁 Configure PHP Opcache for optimal performance
 
