@@ -154,12 +154,12 @@ docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 
 ## 🔐 Production Benefits
 
-✅ Lightweight (Alpine base)
-✅ Secure (non-root, hardened)
-✅ Fast (Opcache, Gzip)
-✅ Scalable (Docker-native)
-✅ Developer-friendly (WordPress, Laravel, Composer-ready)
-✅ Multi-architecture (ARM & AMD)
+- ✅ Lightweight (Alpine base)  
+- ✅ Secure (non-root, hardened)  
+- ✅ Fast (Opcache, Gzip)  
+- ✅ Scalable (Docker-native)  
+- ✅ Developer-friendly (WordPress, Laravel, Composer-ready)  
+- ✅ Multi-architecture (ARM & AMD)
 
 ---
 
