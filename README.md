@@ -91,25 +91,25 @@ exec nginx -g "daemon off;"
 ### ✅ Pull the Prebuilt Image
 
 ```bash
-docker pull ghcr.io/nooblk-98/php-docker-production-stack:latest
+docker pull ghcr.io/nooblk-98/php-docker-nginx:php82
 ```
 
 ### ▶️ Run the Container Directly
 
 ```bash
-docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-production-stack:latest
+docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-nginx:php82
 ```
 
 You can mount your project directory:
 
 ```bash
-docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-production-stack:latest
+docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-nginx:php82
 ```
 
 ### 🧱 Use as a Base Image in Your Dockerfile
 
 ```Dockerfile
-FROM ghcr.io/nooblk-98/php-docker-production-stack:latest
+FROM ghcr.io/nooblk-98/php-docker-nginx:php82
 
 # Copy your application code
 COPY . /var/www/html

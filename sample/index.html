@@ -138,16 +138,16 @@
     <section>
       <h2>🐳 Docker Image Usage</h2>
       <p><strong>Pull the prebuilt image:</strong></p>
-      <code>docker pull ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+      <code>docker pull ghcr.io/nooblk-98/php-docker-nginx:php82</code>
 
       <p><strong>Run directly:</strong></p>
-      <code>docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+      <code>docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-nginx:php82</code>
 
       <p><strong>Mount your local project:</strong></p>
-      <code>docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-production-stack:latest</code>
+      <code>docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-nginx:php82</code>
 
       <p><strong>Use as a base image:</strong></p>
-      <pre><code>FROM ghcr.io/nooblk-98/php-docker-production-stack:latest
+      <pre><code>FROM ghcr.io/nooblk-98/php-docker-nginx:php82
     COPY . /var/www/html
     </code></pre>
     </section>
@@ -156,7 +156,7 @@
       <h2>🔗 Resources</h2>
       <p>
         🌐 <strong>Project Repo:</strong>
-        <a href="https://github.com/nooblk-98/php-docker-production-stack" target="_blank">nooblk-98/php-docker-production-stack</a><br/>
+        <a href="https://github.com/nooblk-98/php-docker-nginx" target="_blank">nooblk-98/php-docker-nginx</a><br/>
         📝 <strong>My Blog:</strong>
         <a href="https://www.itsnooblk.com" target="_blank">itsnooblk.com</a>
       </p>
