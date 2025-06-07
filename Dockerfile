@@ -16,6 +16,7 @@ ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/relea
 # Install required PHP extensions
 RUN install-php-extensions gd \
     xdebug \
+    pcntl \
     redis \
     mysqli \
     pdo \
