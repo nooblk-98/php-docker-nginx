@@ -4,7 +4,7 @@ FROM php:8.2-fpm-alpine
 # Metadata Labels
 # --------------------------
 LABEL maintainer="liyanagelsofficial@gmail.com"
-LABEL version="1.0.0"
+LABEL version="1.0.3"
 LABEL description="Production-ready PHP-FPM + Nginx image"
 
 # Install nginx and required packages
