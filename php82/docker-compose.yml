@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  wordpress:
+    build: .
+    ports:
+      - "9009:80"  # host port 9009 maps to container's 80
+    # volumes:
+    #   - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_pass
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
