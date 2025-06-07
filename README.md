@@ -137,5 +137,4 @@ MIT — free to use and modify.
 
 * [mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 * [Official PHP Docker image](https://hub.docker.com/_/php)
-* [Official Nginx Docker image](https://hub.docker.com/_/nginx)
 
