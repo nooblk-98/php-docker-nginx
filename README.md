@@ -1,3 +1,5 @@
+
+
 # 🚀 wp-production-stack
 
 A **production-ready PHP-FPM + Nginx Docker container** designed for modern PHP applications such as **WordPress**, **Laravel**, and custom PHP stacks. Lightweight, secure, and built for performance.
@@ -13,6 +15,17 @@ A **production-ready PHP-FPM + Nginx Docker container** designed for modern PHP 
 * **Logs** redirected to `stdout` / `stderr` (Docker native)
 * **Security-focused**: runs with minimal privileges
 * **Optimized** for production environments
+
+---
+
+## 🖥️ Platform Support
+
+✅ **Supports both ARM64 and AMD64 architectures**
+This image is built with multi-architecture support and runs seamlessly on:
+
+* Apple Silicon (M1/M2)
+* AWS Graviton
+* Intel/AMD-based servers and desktops
 
 ---
 
@@ -70,17 +83,18 @@ php-fpm -D
 echo "Starting Nginx..."
 exec nginx -g "daemon off;"
 ```
+
 ---
 
-### 🐳 Docker Image Usage
+## 🐳 Docker Image Usage
 
-#### ✅ Pull the Prebuilt Image
+### ✅ Pull the Prebuilt Image
 
 ```bash
 docker pull ghcr.io/nooblk-98/php-docker-production-stack:latest
 ```
 
-#### ▶️ Run the Container Directly
+### ▶️ Run the Container Directly
 
 ```bash
 docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-production-stack:latest
@@ -92,7 +106,7 @@ You can mount your project directory:
 docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-production-stack:latest
 ```
 
-#### 🧱 Use as a Base Image in Your Dockerfile
+### 🧱 Use as a Base Image in Your Dockerfile
 
 ```Dockerfile
 FROM ghcr.io/nooblk-98/php-docker-production-stack:latest
@@ -102,9 +116,10 @@ COPY . /var/www/html
 
 # Customize if needed
 ```
+
 ---
 
-## 🚀 Build & Run from source
+## 🚀 Build & Run from Source
 
 ### 1. Build the Docker Image
 
@@ -118,15 +133,11 @@ docker build -t wp-production-stack .
 docker run -d -p 80:80 wp-production-stack
 ```
 
-Place your app inside `/var/www/html/public` or mount your project directory.
-
-### 3. Run with Mounted Code (for local development)
+### 3. Run with Mounted Code (for Local Development)
 
 ```bash
 docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 ```
-
-Or use this as a base image for your production-ready Laravel or WordPress container.
 
 ---
 
@@ -148,6 +159,7 @@ Or use this as a base image for your production-ready Laravel or WordPress conta
 ✅ Fast (Opcache, Gzip)
 ✅ Scalable (Docker-native)
 ✅ Developer-friendly (WordPress, Laravel, Composer-ready)
+✅ Multi-architecture (ARM & AMD)
 
 ---
 
@@ -168,4 +180,6 @@ MIT — free to use and modify.
 
 * [mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 * [Official PHP Docker image](https://hub.docker.com/_/php)
+* [Nginx Docker image](https://hub.docker.com/_/nginx)
 
+---
