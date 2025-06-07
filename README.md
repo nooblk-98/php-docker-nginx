@@ -1,8 +1,4 @@
-Here is a complete and professional `README.md` for your **wp-production-stack** Docker container, structured to guide developers through usage, features, configuration, and customization:
 
----
-
-````markdown
 # 🚀 wp-production-stack
 
 A **production-ready PHP-FPM + Nginx Docker container** designed for modern PHP applications such as **WordPress**, **Laravel**, and custom PHP stacks. Lightweight, secure, and built for performance.
@@ -142,9 +138,3 @@ MIT — free to use and modify.
 * [mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 * Official [PHP Docker images](https://hub.docker.com/_/php)
 * [Nginx Docker image](https://hub.docker.com/_/nginx)
-
----
-
-```
-
----
