@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome – PHP-FPM + Nginx Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome – PHP Docker Production Stack</title>
   <style>
     :root {
       --primary: #0f172a;
@@ -29,7 +29,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 880px;
       margin: auto;
       background: var(--card-bg);
       border-radius: 12px;
@@ -39,13 +39,19 @@
 
     h1 {
       color: var(--primary);
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
     }
 
     p {
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -71,6 +77,15 @@
       font-size: 0.9rem;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
@@ -81,42 +96,62 @@
 </head>
 <body>
   <div class="container">
-    <h1>🚀 PHP-FPM + Nginx Container</h1>
-    <p>Welcome! This container is optimized for modern PHP applications with performance and production in mind.</p>
+    <h1>🚀 PHP Docker Production Stack</h1>
+    <p>Welcome! This container is optimized for modern PHP applications with performance, security, and scalability in mind.</p>
 
     <section>
       <h2>📦 Stack Overview</h2>
       <ul>
-        <li>PHP 8.2 (FPM Mode) on Alpine</li>
-        <li>Nginx with HTTP/1.1, Gzip, Caching</li>
-        <li>Clean custom entrypoint</li>
-        <li>All essential PHP extensions pre-installed</li>
-        <li>Logging to <code>stdout/stderr</code> for container platforms</li>
+        <li>PHP 8.2 (FPM Mode) running on Alpine Linux</li>
+        <li>Integrated Nginx with Gzip, caching, and static handling</li>
+        <li>Essential PHP extensions pre-installed</li>
+        <li>Custom entrypoint for process supervision</li>
+        <li>Logs redirected to <code>stdout/stderr</code> for Docker compatibility</li>
       </ul>
     </section>
 
     <section>
       <h2>🎯 Benefits</h2>
       <ul>
-        <li>Lightweight and fast (Alpine based)</li>
-        <li>Secure: runs with privilege dropping support</li>
-        <li>Pre-configured for production</li>
-        <li>Extendable for Laravel, WordPress, and APIs</li>
+        <li>Lightweight and fast (Alpine base)</li>
+        <li>Secure with minimal privileges and hardened config</li>
+        <li>Production-optimized with Opcache and caching</li>
+        <li>Perfect for Laravel, WordPress, APIs, or custom PHP stacks</li>
       </ul>
     </section>
 
     <section>
       <h2>📁 Document Root</h2>
-      <p>Application files are served from: <code>/var/www/html</code></p>
+      <p>Application files are served from: <code>/var/www/html/public</code></p>
+    </section>
+
+    <section>
+      <h2>🛠 Installed PHP Extensions</h2>
+      <ul>
+        <li>pdo, pdo_mysql, mysqli, mbstring, curl, json, xml</li>
+        <li>fileinfo, dom, phar, iconv, zip, tokenizer</li>
+        <li>simplexml, intl, exif, soap, bcmath</li>
+        <li>gd, imagick, opcache, redis, xdebug</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔗 Resources</h2>
+      <p>
+        🌐 <strong>Project Repo:</strong>
+        <a href="https://github.com/nooblk-98/php-docker-production-stack" target="_blank">nooblk-98/php-docker-production-stack</a><br/>
+        📝 <strong>My Blog:</strong>
+        <a href="https://www.itsnooblk.com" target="_blank">itsnooblk.com</a>
+      </p>
     </section>
 
     <section>
       <h2>📬 Maintainer</h2>
-      <p><strong>liyanagelsofficial@gmail.com</strong></p>
+      <p><strong>Liyanage L.S.</strong><br/>📧 liyanagelsofficial@gmail.com</p>
     </section>
 
     <footer>
-      &copy; 2025 – Built with ❤️ for speed and scalability.
+      &copy; 2025 — Built with ❤️ for developers by <a href="https://www.itsnooblk.com" target="_blank">itsnooblk.com</a>.
     </footer>
   </div>
 </body>
