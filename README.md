@@ -1,6 +1,6 @@
 
 
-# 🚀 php-production-stack
+# php-production-stack
 
 A **production-ready PHP-FPM + Nginx Docker container** designed for modern PHP applications such as **WordPress**, **Laravel**, and custom PHP stacks. Lightweight, secure, and built for performance.
 
@@ -50,7 +50,7 @@ This image uses the excellent [mlocati/docker-php-extension-installer](https://g
 * `simplexml`, `intl`, `exif`, `soap`, `bcmath`
 * `gd`, `imagick`, `opcache`, `redis`, `xdebug`
 
-### ➕ Add Custom Extensions
+### Add Custom Extensions
 
 To add additional extensions, modify the Dockerfile:
 
@@ -62,7 +62,7 @@ RUN install-php-extensions pcntl redis zip imagick
 
 ## 🔧 Configuration Highlights
 
-### 🖥️ Nginx
+###  Nginx
 
 * Default config: `/etc/nginx/nginx.conf`
 * Document root: `/var/www/html`
@@ -73,7 +73,7 @@ To change the default root (e.g., for Laravel):
 RUN sed -i 's|root /var/www/html;|root /var/www/html/public;|' /etc/nginx/nginx.conf
 ```
 
-### ⚙️ Entrypoint: `/usr/local/bin/entrypoint.sh`
+### 🔧 Entrypoint: `/usr/local/bin/entrypoint.sh`
 
 ```sh
 #!/bin/sh
@@ -86,13 +86,13 @@ exec supervisord -c /etc/supervisord.conf
 
 ## 🐳 Docker Image Usage
 
-### ✅ Pull the Prebuilt Image
+### Pull the Prebuilt Image
 
 ```bash
 docker pull ghcr.io/nooblk-98/php-docker-nginx:php82
 ```
 
-### ▶️ Run the Container Directly
+### Run the Container Directly
 
 ```bash
 docker run -d -p 80:80 ghcr.io/nooblk-98/php-docker-nginx:php82
@@ -104,7 +104,7 @@ You can mount your project directory:
 docker run -d -p 80:80 -v $(pwd):/var/www/html ghcr.io/nooblk-98/php-docker-nginx:php82
 ```
 
-### 🧱 Use as a Base Image in Your Dockerfile
+### Use as a Base Image in Your Dockerfile
 
 ```Dockerfile
 FROM ghcr.io/nooblk-98/php-docker-nginx:php82
@@ -117,7 +117,7 @@ COPY . /var/www/html
 
 ---
 
-## 🚀 Build & Run from Source
+## Build & Run from Source
 
 ### 1. Build the Docker Image
 
@@ -139,7 +139,7 @@ docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 
 ---
 
-## ⚙️ Environment Notes
+## 🔧 Environment Notes
 
 * **Exposed Port:** `80`
 * **PHP-FPM Listener:** `127.0.0.1:9000`
@@ -150,7 +150,7 @@ docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 
 ---
 
-## 🔐 Production Benefits
+## 🔧 Production Benefits
 
 - ✅ Lightweight (Alpine base)  
 - ✅ Secure (non-root, hardened)  
@@ -177,11 +177,7 @@ docker run -d -p 80:80 -v $(pwd):/var/www/html wp-production-stack
 
 ---
 
-## 📄 License
 
-MIT — free to use and modify.
-
----
 
 ## 🌐 Credits
 
