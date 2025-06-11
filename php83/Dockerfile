@@ -60,7 +60,7 @@ WORKDIR /var/www/html
 COPY sample/index.html ./index.html
 
 # Copy custom entrypoint
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN chown -R www-data:www-data /var/www/html
