@@ -1,4 +1,4 @@
-name: Build php 80
+name: Build php 81
 
 on:
   workflow_dispatch:
@@ -29,8 +29,8 @@ jobs:
     - name: Build and push multi-arch image (php80)
       uses: docker/build-push-action@v5
       with:
-        context: ./php80
-        file: ./php80/Dockerfile
+        context: ./php81
+        file: ./php81/Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
         tags: |
