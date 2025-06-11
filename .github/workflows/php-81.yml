@@ -29,7 +29,7 @@ jobs:
     - name: Build and push multi-arch image (php80)
       uses: docker/build-push-action@v5
       with:
-        context: ./php81
+        context: .
         file: ./php81/Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
