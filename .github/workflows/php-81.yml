@@ -2,6 +2,10 @@ name: Build php 81
 
 on:
   workflow_dispatch:
+  workflow_call:
+  schedule:
+    # Run on the 1st day of every month at 2:00 AM UTC
+    - cron: '0 2 1 * *'
 
 permissions:
   contents: read
@@ -26,7 +30,14 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build and push multi-arch image (php80)
+    # Log in to Docker Hub
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push multi-arch image (php81)
       uses: docker/build-push-action@v5
       with:
         context: .
@@ -35,3 +46,4 @@ jobs:
         push: true
         tags: |
           ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:php81
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:php81

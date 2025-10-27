@@ -1,0 +1,52 @@
+name: Build All PHP Versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run on the 1st day of every month at 1:00 AM UTC (before individual builds)
+    - cron: '0 1 1 * *'
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  trigger-all-builds:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [56, 72, 74, 81, 82, 83]
+    steps:
+      - name: Trigger PHP ${{ matrix.php-version }} Build
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'php-${{ matrix.php-version }}.yml',
+              ref: 'main'
+            });
+            
+            console.log('Triggered PHP ${{ matrix.php-version }} build workflow');
+
+  # Alternative approach using workflow_call (runs builds in parallel)
+  build-php-56:
+    uses: ./.github/workflows/php-56.yml
+    
+  build-php-72:
+    uses: ./.github/workflows/php-72.yml
+    
+  build-php-74:
+    uses: ./.github/workflows/php-74.yml
+    
+  build-php-81:
+    uses: ./.github/workflows/php-81.yml
+    
+  build-php-82:
+    uses: ./.github/workflows/php-82.yml
+    
+  build-php-83:
+    uses: ./.github/workflows/php-83.yml
