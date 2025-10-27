@@ -15,18 +15,24 @@ jobs:
   # Build all PHP versions using workflow_call (runs builds in parallel)
   build-php-56:
     uses: ./.github/workflows/php-56.yml
+    secrets: inherit
     
   build-php-72:
     uses: ./.github/workflows/php-72.yml
+    secrets: inherit
     
   build-php-74:
     uses: ./.github/workflows/php-74.yml
+    secrets: inherit
     
   build-php-81:
     uses: ./.github/workflows/php-81.yml
+    secrets: inherit
     
   build-php-82:
     uses: ./.github/workflows/php-82.yml
+    secrets: inherit
     
   build-php-83:
     uses: ./.github/workflows/php-83.yml
+    secrets: inherit
