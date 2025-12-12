@@ -8,7 +8,13 @@ LABEL version="1.0.3"
 LABEL description="Production-ready PHP-FPM + Nginx image"
 
 # Install nginx and required packages
-RUN apk add --no-cache nginx bash curl nano  wget supervisor
+# Use --no-scripts to avoid QEMU emulation issues in multi-arch builds
+RUN apk add --no-cache --no-scripts nginx bash curl nano wget supervisor && \
+    # Manually create nginx user and directories since we skipped scripts
+    addgroup -g 101 -S nginx 2>/dev/null || true && \
+    adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx 2>/dev/null || true && \
+    mkdir -p /var/lib/nginx /var/log/nginx /run/nginx && \
+    chown -R nginx:nginx /var/lib/nginx /var/log/nginx /run/nginx
 
 # PHP extension installer
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
