@@ -84,6 +84,47 @@ RUN chown -R www-data:www-data /var/www/html
 
 ---
 
+## **Environment Variables**
+
+Customize PHP settings at runtime using environment variables:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PHP_MEMORY_LIMIT` | `128M` | Maximum memory per script |
+| `PHP_UPLOAD_MAX_FILESIZE` | `64M` | Maximum upload file size |
+| `PHP_POST_MAX_SIZE` | `64M` | Maximum POST data size |
+| `PHP_MAX_EXECUTION_TIME` | `30` | Script execution timeout (seconds) |
+| `PHP_MAX_INPUT_TIME` | `60` | Input parsing time limit (seconds) |
+
+### **Usage Example**
+```bash
+# Run with custom PHP settings
+docker run -d -p 80:80 \
+  -v $(pwd):/var/www/html \
+  -e PHP_MEMORY_LIMIT=512M \
+  -e PHP_UPLOAD_MAX_FILESIZE=250M \
+  -e PHP_POST_MAX_SIZE=250M \
+  ghcr.io/nooblk-98/php-docker-nginx:latest
+```
+
+### **Docker Compose Example**
+```yaml
+services:
+  web:
+    image: ghcr.io/nooblk-98/php-docker-nginx:php82
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      - PHP_MEMORY_LIMIT=512M
+      - PHP_UPLOAD_MAX_FILESIZE=250M
+      - PHP_POST_MAX_SIZE=250M
+      - PHP_MAX_EXECUTION_TIME=300
+```
+
+---
+
 ## **Complete Feature Set**
 
 ### **Built-in Components**
@@ -186,7 +227,10 @@ services:
     volumes:
       - ./app:/var/www/html
     environment:
-      - PHP_MEMORY_LIMIT=256M
+      - PHP_MEMORY_LIMIT=512M
+      - PHP_UPLOAD_MAX_FILESIZE=250M
+      - PHP_POST_MAX_SIZE=250M
+      - PHP_MAX_EXECUTION_TIME=300
     depends_on:
       - database
       - redis
